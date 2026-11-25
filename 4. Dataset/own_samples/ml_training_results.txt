@@ -1,0 +1,41 @@
+PostureGuard ML training results
+Dataset: C:\Users\hasee\OneDrive\Desktop\postureguard-frontend\backend\data\evaluation\own_samples\labels.csv
+Samples loaded: 3000
+Samples skipped: 0
+GOOD samples: 1500
+BAD samples: 1500
+
+Model: RandomForestClassifier
+Saved model: C:\Users\hasee\OneDrive\Desktop\postureguard-frontend\backend\models\posture_random_forest.pkl
+
+Holdout test split: 80% train / 20% test
+Accuracy: 97.83%
+Precision (BAD): 98.32%
+Recall (BAD): 97.33%
+F1 (BAD): 97.82%
+Precision (GOOD): 97.36%
+Recall (GOOD): 98.33%
+F1 (GOOD): 97.84%
+
+Confusion matrix
+Actual\Predicted | GOOD | BAD
+GOOD             |  295 |    5
+BAD              |    8 |  292
+
+5-fold cross validation
+Accuracy mean: 98.17%
+Accuracy std: 0.35%
+
+Top feature importances
+head_center_offset: 0.2164
+eye_to_shoulder_drop: 0.1918
+neck_height_ratio: 0.1336
+face_level_balance: 0.1078
+shoulder_tilt: 0.0819
+face_height_ratio: 0.0538
+face_balance: 0.0451
+face_frame_offset: 0.0450
+shoulder_depth: 0.0372
+shoulder_width: 0.0239
+head_to_shoulder_distance: 0.0166
+face_to_shoulder_depth: 0.0145

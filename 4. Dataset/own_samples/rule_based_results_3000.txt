@@ -1,0 +1,27 @@
+Rule-based only evaluation
+Dataset: C:\Users\hasee\OneDrive\Desktop\postureguard-frontend\backend\data\evaluation\own_samples\labels.csv
+Samples evaluated: 3000
+Samples skipped: 0
+
+Accuracy: 79.43%
+Precision (BAD): 90.84%
+Recall (BAD): 65.47%
+F1 (BAD): 76.09%
+Precision (GOOD): 73.01%
+Recall (GOOD): 93.40%
+F1 (GOOD): 81.95%
+
+Confusion matrix
+Actual\Predicted | GOOD | BAD
+GOOD             | 1401 |   99
+BAD              |  518 |  982
+
+Original labels collected
+BAD: 1500
+GOOD: 1500
+
+Raw detector outputs
+bad: 779
+camera_misaligned: 300
+good: 1919
+out_of_position: 2

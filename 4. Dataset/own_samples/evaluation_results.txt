@@ -1,0 +1,25 @@
+Own webcam sample evaluation
+Dataset: own_samples/labels.csv
+Samples evaluated: 780
+Samples skipped: 0
+
+Accuracy: 91.28%
+Precision (BAD): 91.49%
+Recall (BAD): 90.53%
+F1 (BAD): 91.01%
+Precision (GOOD): 91.09%
+Recall (GOOD): 92.00%
+F1 (GOOD): 91.54%
+
+Confusion matrix
+Actual\Predicted | GOOD | BAD
+GOOD             |  368 |   36
+BAD              |   32 |  344
+
+Original labels collected
+BAD: 380
+GOOD: 400
+
+Raw detector outputs
+bad: 376
+good: 404

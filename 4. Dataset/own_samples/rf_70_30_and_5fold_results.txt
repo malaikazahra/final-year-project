@@ -1,0 +1,28 @@
+Random Forest evaluation with larger test set
+Samples loaded: 3000
+Samples skipped: 0
+GOOD samples: 1500
+BAD samples: 1500
+
+Holdout test split: 70% train / 30% test
+Training samples: 2100
+Testing samples: 900
+Test GOOD samples: 450
+Test BAD samples: 450
+Accuracy: 98.00%
+Precision (BAD): 98.21%
+Recall (BAD): 97.78%
+F1 (BAD): 98.00%
+Precision (GOOD): 97.79%
+Recall (GOOD): 98.22%
+F1 (GOOD): 98.00%
+
+Confusion matrix
+Actual\Predicted | GOOD | BAD
+GOOD             |  442 |    8
+BAD              |   10 |  440
+
+5-fold cross validation
+Fold accuracies: 97.67%, 97.83%, 98.50%, 98.50%, 98.33%
+Accuracy mean: 98.17%
+Accuracy std: 0.35%
