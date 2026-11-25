@@ -1,0 +1,212 @@
+/* ════════════════════════════════════════════════════════════════
+   MICRO-ANIMATIONS
+   ════════════════════════════════════════════════════════════════ */
+
+/* ── Page transition ─────────────────────────────────────────── */
+.layout-main {
+  animation: pg-fade-up 0.28s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+@keyframes pg-fade-up {
+  from { opacity: 0; transform: translateY(10px); }
+  to   { opacity: 1; transform: translateY(0);    }
+}
+
+/* ── Card entrance (stagger via nth-child) ───────────────────── */
+.card,
+.db-card,
+.db-stat-card,
+.lp-feature-card {
+  animation: card-enter 0.35s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.db-stats-row .db-stat-card:nth-child(1) { animation-delay: 0.04s; }
+.db-stats-row .db-stat-card:nth-child(2) { animation-delay: 0.08s; }
+.db-stats-row .db-stat-card:nth-child(3) { animation-delay: 0.12s; }
+.db-stats-row .db-stat-card:nth-child(4) { animation-delay: 0.16s; }
+
+.lp-features-grid .lp-feature-card:nth-child(1) { animation-delay: 0.05s; }
+.lp-features-grid .lp-feature-card:nth-child(2) { animation-delay: 0.10s; }
+.lp-features-grid .lp-feature-card:nth-child(3) { animation-delay: 0.15s; }
+.lp-features-grid .lp-feature-card:nth-child(4) { animation-delay: 0.20s; }
+.lp-features-grid .lp-feature-card:nth-child(5) { animation-delay: 0.25s; }
+.lp-features-grid .lp-feature-card:nth-child(6) { animation-delay: 0.30s; }
+
+@keyframes card-enter {
+  from { opacity: 0; transform: translateY(14px); }
+  to   { opacity: 1; transform: translateY(0);    }
+}
+
+/* ── Nav link active underline slide ────────────────────────── */
+.nav-link {
+  position: relative;
+  overflow: hidden;
+}
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 50%;
+  width: 0; height: 2px;
+  background: linear-gradient(90deg, var(--accent), var(--accent-2));
+  border-radius: 2px;
+  transition: width 0.22s ease, left 0.22s ease;
+}
+.nav-link.active::after,
+.nav-link:hover::after {
+  width: 70%;
+  left: 15%;
+}
+
+/* ── Button ripple ───────────────────────────────────────────── */
+button {
+  position: relative;
+  overflow: hidden;
+}
+button .ripple {
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.18);
+  transform: scale(0);
+  animation: ripple-expand 0.5s linear;
+  pointer-events: none;
+}
+@keyframes ripple-expand {
+  to { transform: scale(4); opacity: 0; }
+}
+
+/* ── Badge pop-in ────────────────────────────────────────────── */
+.top-exercise-badge,
+.db-session-badge,
+.db-count-badge,
+.lp-badge,
+.lp-live-pill {
+  animation: badge-pop 0.3s cubic-bezier(0.34, 1.56, 0.64, 1) both;
+}
+@keyframes badge-pop {
+  from { opacity: 0; transform: scale(0.7); }
+  to   { opacity: 1; transform: scale(1);   }
+}
+
+/* ── Progress bar fill ───────────────────────────────────────── */
+.progress-fill,
+.db-bar-fill,
+.live-calibration-progress-fill {
+  animation: bar-grow 0.7s cubic-bezier(0.22, 1, 0.36, 1) both;
+  animation-delay: 0.2s;
+  transform-origin: left center;
+}
+@keyframes bar-grow {
+  from { clip-path: inset(0 100% 0 0); }
+  to   { clip-path: inset(0 0% 0 0);   }
+}
+
+/* ── Score ring draw ─────────────────────────────────────────── */
+.db-score-body circle:last-of-type,
+.db-session-score-ring circle:last-of-type {
+  animation: ring-draw 0.8s cubic-bezier(0.22, 1, 0.36, 1) both;
+  animation-delay: 0.15s;
+}
+@keyframes ring-draw {
+  from { stroke-dashoffset: 999; }
+}
+
+/* ── Stat value count-up shimmer ─────────────────────────────── */
+.db-stat-value {
+  animation: val-appear 0.4s ease both;
+  animation-delay: 0.1s;
+}
+@keyframes val-appear {
+  from { opacity: 0; transform: translateY(6px); }
+  to   { opacity: 1; transform: translateY(0);   }
+}
+
+/* ── Alert slide-in ──────────────────────────────────────────── */
+.db-alert,
+.alert {
+  animation: alert-in 0.25s ease both;
+}
+.db-alerts-list .db-alert:nth-child(1) { animation-delay: 0.05s; }
+.db-alerts-list .db-alert:nth-child(2) { animation-delay: 0.10s; }
+.db-alerts-list .db-alert:nth-child(3) { animation-delay: 0.15s; }
+@keyframes alert-in {
+  from { opacity: 0; transform: translateX(-8px); }
+  to   { opacity: 1; transform: translateX(0);    }
+}
+
+/* ── Session row slide-in ────────────────────────────────────── */
+.db-session-row {
+  animation: session-in 0.3s ease both;
+}
+.db-sessions-list .db-session-row:nth-child(1) { animation-delay: 0.05s; }
+.db-sessions-list .db-session-row:nth-child(2) { animation-delay: 0.10s; }
+.db-sessions-list .db-session-row:nth-child(3) { animation-delay: 0.15s; }
+.db-sessions-list .db-session-row:nth-child(4) { animation-delay: 0.20s; }
+.db-sessions-list .db-session-row:nth-child(5) { animation-delay: 0.25s; }
+@keyframes session-in {
+  from { opacity: 0; transform: translateX(10px); }
+  to   { opacity: 1; transform: translateX(0);    }
+}
+
+/* ── Exercise list item slide-in ─────────────────────────────── */
+.exercise-list-item {
+  animation: exitem-in 0.28s ease both;
+}
+.exercise-list-item:nth-child(1) { animation-delay: 0.03s; }
+.exercise-list-item:nth-child(2) { animation-delay: 0.06s; }
+.exercise-list-item:nth-child(3) { animation-delay: 0.09s; }
+.exercise-list-item:nth-child(4) { animation-delay: 0.12s; }
+.exercise-list-item:nth-child(5) { animation-delay: 0.15s; }
+.exercise-list-item:nth-child(6) { animation-delay: 0.18s; }
+@keyframes exitem-in {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0);   }
+}
+
+/* ── Tooltip / hover lift on interactive cards ───────────────── */
+.db-stat-card,
+.lp-feature-card,
+.exercise-list-item,
+.db-session-row,
+.achievement-item {
+  transition: transform 0.18s ease, border-color 0.18s ease, box-shadow 0.18s ease;
+}
+.db-stat-card:hover     { transform: translateY(-2px); }
+.achievement-item:hover { transform: translateY(-2px); }
+
+/* ── Monitoring live dot pulse (strengthen existing) ─────────── */
+.db-live-dot,
+.top-monitor-pill::before {
+  animation: live-pulse 1.2s ease-in-out infinite;
+}
+@keyframes live-pulse {
+  0%, 100% { opacity: 1;   transform: scale(1);    box-shadow: 0 0 0 0   rgba(52,211,153,0.5); }
+  50%       { opacity: 0.6; transform: scale(0.75); box-shadow: 0 0 0 4px rgba(52,211,153,0);   }
+}
+
+/* ── Toast slide up ──────────────────────────────────────────── */
+.demo-toast,
+.adm-toast {
+  animation: toast-up 0.3s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+@keyframes toast-up {
+  from { opacity: 0; transform: translateY(16px) scale(0.96); }
+  to   { opacity: 1; transform: translateY(0)    scale(1);    }
+}
+
+/* ── Logo mark spin on hover ─────────────────────────────────── */
+.logo-mark,
+.lp-logo-mark {
+  transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+.logo-mark:hover,
+.lp-logo-mark:hover {
+  transform: rotate(15deg) scale(1.08);
+}
+
+/* ── Respect reduced-motion preference ───────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
